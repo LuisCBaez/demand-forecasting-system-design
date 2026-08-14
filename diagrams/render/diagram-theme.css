@@ -1,0 +1,124 @@
+:root {
+  --ink: #17343b;
+  --muted: #536b70;
+  --teal: #0e6866;
+  --teal-dark: #0a5354;
+  --blue: #155f75;
+  --green: #16805f;
+  --amber: #c98524;
+  --line: #aac1c3;
+  --line-soft: #d8e4e3;
+  --paper: #fbfcfb;
+  --panel: #ffffff;
+  --wash: #f1f7f6;
+  --blue-wash: #f1f7fa;
+  --amber-wash: #fff8ed;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 1600px;
+  height: 1000px;
+  margin: 0;
+  overflow: hidden;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+}
+
+.canvas {
+  width: 1600px;
+  height: 1000px;
+  padding: 48px 54px 42px;
+  background:
+    radial-gradient(circle at 94% 4%, rgba(14, 104, 102, 0.055), transparent 24%),
+    linear-gradient(180deg, #ffffff 0%, var(--paper) 100%);
+}
+
+.kicker {
+  margin: 0 0 8px;
+  color: var(--teal);
+  font-size: 15px;
+  font-weight: 750;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+h1 {
+  margin: 0;
+  color: var(--ink);
+  font-size: 42px;
+  font-weight: 760;
+  letter-spacing: -0.035em;
+  line-height: 1.08;
+}
+
+.subtitle {
+  margin: 10px 0 0;
+  color: var(--muted);
+  font-size: 18px;
+  line-height: 1.4;
+}
+
+.section-label {
+  color: var(--teal-dark);
+  font-size: 15px;
+  font-weight: 780;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.panel {
+  border: 1.5px solid var(--line);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.94);
+}
+
+.card {
+  border: 1.2px solid var(--line);
+  border-radius: 12px;
+  background: var(--panel);
+}
+
+.step-number {
+  display: inline-flex;
+  width: 34px;
+  height: 34px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--teal);
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.flow-arrow {
+  display: flex;
+  flex: 0 0 32px;
+  align-items: center;
+  justify-content: center;
+  color: var(--teal);
+  font-size: 30px;
+  font-weight: 350;
+}
+
+.note {
+  border: 1px dashed #c9a66d;
+  border-radius: 10px;
+  background: var(--amber-wash);
+  color: #5f513f;
+}
+
+.note strong {
+  color: var(--ink);
+}
+

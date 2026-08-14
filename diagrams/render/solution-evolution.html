@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=1600, initial-scale=1">
+  <title>Evolution from Exploratory Forecasting to Monthly Decision Support</title>
+  <link rel="stylesheet" href="diagram-theme.css">
+  <style>
+    .timeline {
+      display: flex;
+      align-items: stretch;
+      margin-top: 38px;
+    }
+
+    .stage {
+      position: relative;
+      flex: 1 1 0;
+      min-width: 0;
+      height: 500px;
+      padding: 26px 24px 22px;
+      border: 1.5px solid var(--line);
+      border-radius: 17px;
+      background: rgba(255, 255, 255, 0.96);
+      box-shadow: 0 7px 18px rgba(23, 52, 59, 0.035);
+    }
+
+    .stage::before {
+      position: absolute;
+      top: -2px;
+      left: 24px;
+      width: 72px;
+      height: 5px;
+      border-radius: 0 0 5px 5px;
+      background: var(--accent);
+      content: "";
+    }
+
+    .stage:nth-of-type(1) { --accent: var(--blue); }
+    .stage:nth-of-type(2) { --accent: var(--amber); }
+    .stage:nth-of-type(3) { --accent: var(--teal); }
+    .stage:nth-of-type(4) { --accent: var(--green); }
+
+    .stage-header {
+      display: flex;
+      align-items: center;
+      gap: 13px;
+    }
+
+    .stage:nth-of-type(2) .step-number { background: var(--amber); }
+    .stage:nth-of-type(3) .step-number { background: var(--teal); }
+    .stage:nth-of-type(4) .step-number { background: var(--green); }
+
+    .stage h2 {
+      margin: 0;
+      font-size: 24px;
+      line-height: 1.12;
+      letter-spacing: -0.025em;
+    }
+
+    .stage-summary {
+      min-height: 75px;
+      margin: 20px 0 18px;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.48;
+    }
+
+    .stage ul {
+      margin: 0;
+      padding: 18px 0 0;
+      border-top: 1px solid var(--line-soft);
+      list-style: none;
+    }
+
+    .stage li {
+      position: relative;
+      margin: 0 0 15px;
+      padding-left: 18px;
+      font-size: 16px;
+      line-height: 1.35;
+    }
+
+    .stage li::before {
+      position: absolute;
+      top: 8px;
+      left: 0;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--accent);
+      content: "";
+    }
+
+    .transition {
+      display: flex;
+      flex: 0 0 50px;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: var(--teal);
+    }
+
+    .transition span:first-child {
+      margin-bottom: 6px;
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+    }
+
+    .transition span:last-child {
+      font-size: 34px;
+      font-weight: 300;
+    }
+
+    .shift-band {
+      margin-top: 28px;
+      padding: 20px 24px 18px;
+      border: 1.5px solid var(--teal);
+      border-radius: 15px;
+      background: var(--wash);
+    }
+
+    .shift-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin-top: 13px;
+    }
+
+    .shift {
+      padding: 0 15px;
+      border-left: 3px solid var(--teal);
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.35;
+    }
+
+    .shift strong {
+      display: block;
+      margin-bottom: 3px;
+      color: var(--ink);
+      font-size: 15px;
+    }
+  </style>
+</head>
+<body>
+  <main class="canvas">
+    <p class="kicker">Solution evolution</p>
+    <h1>From exploratory forecasting to monthly decision support</h1>
+    <p class="subtitle">The pilot established the baseline; its constraints became explicit requirements for a repeatable and transparent operating workflow.</p>
+
+    <section class="timeline" aria-label="Four stages in the solution evolution">
+      <article class="stage">
+        <div class="stage-header">
+          <span class="step-number">01</span>
+          <h2>Exploratory pilot</h2>
+        </div>
+        <p class="stage-summary">Establish a practical forecasting baseline and understand the available evidence.</p>
+        <ul>
+          <li>Consolidate fragmented sources</li>
+          <li>Explore demand behavior</li>
+          <li>Test initial statistical methods</li>
+          <li>Review forecasts manually</li>
+        </ul>
+      </article>
+
+      <div class="transition" aria-hidden="true"><span>Learn</span><span>→</span></div>
+
+      <article class="stage">
+        <div class="stage-header">
+          <span class="step-number">02</span>
+          <h2>Engineering findings</h2>
+        </div>
+        <p class="stage-summary">Convert observed limitations into data, evaluation, and transparency requirements.</p>
+        <ul>
+          <li>Repeated data preparation</li>
+          <li>Sparse and varied demand</li>
+          <li>Limited selection traceability</li>
+          <li>Disconnected review context</li>
+        </ul>
+      </article>
+
+      <div class="transition" aria-hidden="true"><span>Redesign</span><span>→</span></div>
+
+      <article class="stage">
+        <div class="stage-header">
+          <span class="step-number">03</span>
+          <h2>Recurring engine</h2>
+        </div>
+        <p class="stage-summary">Implement a staged, configurable workflow with reproducible evidence.</p>
+        <ul>
+          <li>Profile-aware candidate pools</li>
+          <li>Chronological evaluation</li>
+          <li>Full-history refitting</li>
+          <li>MLflow experiment tracking</li>
+        </ul>
+      </article>
+
+      <div class="transition" aria-hidden="true"><span>Publish</span><span>→</span></div>
+
+      <article class="stage">
+        <div class="stage-header">
+          <span class="step-number">04</span>
+          <h2>Decision support</h2>
+        </div>
+        <p class="stage-summary">Deliver governed analytical datasets through a clear human review boundary.</p>
+        <ul>
+          <li>User-triggered Databricks run</li>
+          <li>Standardized output contracts</li>
+          <li>Transparent selection context</li>
+          <li>Power BI and analyst review</li>
+        </ul>
+      </article>
+    </section>
+
+    <section class="shift-band">
+      <div class="section-label">What changed</div>
+      <div class="shift-grid">
+        <div class="shift"><strong>Notebook-led → staged</strong>Configuration and reusable modules</div>
+        <div class="shift"><strong>Manual → evidence-led</strong>Chronological model comparison</div>
+        <div class="shift"><strong>Fragmented → contracted</strong>Reusable analytical datasets</div>
+        <div class="shift"><strong>Analysis → operating handoff</strong>Human interpretation stays explicit</div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
